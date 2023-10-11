@@ -1,0 +1,44 @@
+ <html>
+<body>
+
+<form action="welcomeactividadbd.php" method="POST" onsubmit="return validar()">
+    nombre:<input type="nombre" id="nombre" name="nombre"> 
+    Apellido:<input type="apellido" id="apellido" name="apellido"> 
+    Gmail:<input type="email" id="gmail" name="gmail">
+    contrasena<input type="contrasena" id="contrasena" name="contrasena">
+
+    <input type="submit" value="agregar">
+
+<script>
+    function validar() {
+        var nombre = document.getElementById("nombre").value;
+        var gmail = document.getElementById("gmail").value;
+        var contrasena = document.getElementById("contrasena").value;
+        var gmailV = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
+        var val="";
+
+        if (nombre== val){
+            alert("ingrese un nombre");
+            return false;
+        }
+        if (apellido==val){
+            alert("ingrese un apellido");
+            return false;
+        }
+
+        if (!gmailV.test(gmail)) {
+            alert("ingrese un email valido");
+            return false;
+        }
+
+        if (contrasena.length < 8) {
+            alert("la contraseña es menor a 8 caracteres");
+            return false;
+        }
+
+        return true;
+        this.submit();
+    }
+</script>
+</body>
+</html>
